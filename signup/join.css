@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+
+@font-face {  /*두번째*/
+  font-family: 'intelone-mono-font-family-regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+
+
+body {
+  font-family: 'intelone-mono-font-family-regular';
+
+  margin: 0;
+  padding: 0;
+ 
+  background-position: center center; /*한가운데다가 고정시키고 반응형해도 뭉개지지않기 */
+
+
+  background-image: url("https://img.freepik.com/free-vector/background-with-natural-landscape_23-2148650298.jpg?w=740&t=st=1699237801~exp=1699238401~hmac=acbe3ae935a39f322b74237f30918762490a9198cc812fa285f27eed541f9d51");
+  z-index: 1;
+ /* background-image: url("https://i.gifer.com/CQx.gif");*/
+  background-repeat : no-repeat;
+  background-size: cover;
+
+  background-position: center center; /*한가운데다가 고정시키고 반응형해도 뭉개지지않기 */
+width: 100%;
+height: 1080px;
+max-height: 100%;
+  
+
+}
+
+#container {
+  width: 440px;
+  margin: 60px auto 0; /* 좌우 여백을 동일하게 */
+  height: 300px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  
+
+}
+
+form {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-block-end: 1rem;
+  width: 440px;
+  height: 300px;
+  box-shadow: 3px 3px 3px;
+
+  
+}
+
+.table {
+  width: 80%;
+  margin: auto;
+}
+
+th {
+  width: 40%;
+  text-align: right;
+  padding: 5px;
+}
+
+td {
+  width: 60%;
+  text-align: left;
+  padding-left: 5px;
+}
+
+input, select, textarea {
+  width: 240px;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+
+
+input[type="radio"]{
+  width: initial;
+}
+
+input[type="submit"], input[type="reset"]{
+  width: 80px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+
+}
+
+textarea {
+  resize: none;
+  width: 240px;
+  min-height: 80px;
+}
+
+.buttons {
+  margin: 10px 0 0 0;
+  text-align: center;
+  font-family: 'intelone-mono-font-family-regular';
+
+}
+
+
+

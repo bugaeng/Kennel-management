@@ -1,0 +1,229 @@
+
+
+
+
+<!-- 안됌말고-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+</head>
+
+<link rel="stylesheet" href="login.css">
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+<body>
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/i18next/17.0.18/i18next.min.js"
+  type="text/javascript" ></script>
+ 
+
+
+
+
+<p style="float: right;"> </p>
+<select id="lang-select" onchange="i18next.changeLanguage(this.value)">
+  <option value="en">English  </option>
+      <option value="ko">Korean  </option>
+      <option value="fr">French</option>
+</select>
+
+
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<div class="container mt-5"> <!-- 반응형웹페이지 시작-->
+  <div class="row">
+    <div class="col-sm-4">
+
+
+<div class="main" >
+    <h1 class="logo" >   <p id="title"> </p>  </h1>
+    <div class="container" >
+
+      <input type="text" placeholder="ID" id="email" class="account" style="border: none; background-color: transparent; border-bottom: 2px solid #000000;
+      margin: 35px auto;">
+      <input type="password" placeholder="Password" id="password" class="account" style="border: none; background-color: transparent; border-bottom: 2px solid #000000;
+      margin: 35px auto;"> <!--border-bottom: 2px solid #000000;
+      margin: 35px auto; 는 밑줄 -->
+      <input type="submit" id="login" name = "login" class="account"  value="login" style="cursor: pointer; border: none; background-color: transparent; "  > 
+      <p id="alert" class="account"></p>
+
+     
+      <p > <a href="/domabam.html" id="goback">  </a></p>
+      <p id="content"> <a href="/signup/newuser.html" id="youneed"> </a></p>  
+      <p > <a href="/signup/newuser.html" id="youneed">  </a></p>
+   
+    </div>
+  </div>
+
+
+  
+</body>
+<script src="changelng.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+  import { getDatabase , set,ref  , update} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"; //데이터베이스 링크 안에 추가적인것을 넣기위한 set,ref 
+  import { getAuth, createUserWithEmailAndPassword , signInWithEmailAndPassword , onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAKlYaOC3qlsXwt5e9xFDadVCMNEffNe24",
+    authDomain: "trylogin-now.firebaseapp.com",
+    databaseURL: "https://trylogin-now-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "trylogin-now",
+    storageBucket: "trylogin-now.appspot.com",
+    messagingSenderId: "503987516936",
+    appId: "1:503987516936:web:c1b1d99533faf08a2d43bd"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+/*
+  login.addEventListener('submit',(e)=>{
+  //  document.getElementById('sighUp').addEventListener('click',(e)=>{
+    e.preventDefault();
+    var email;
+    var password;
+    var username;
+    email= document.getElementById('email').value;
+     password= document.getElementById('password').value;
+     username= document.getElementById('username').value;
+ 
+  //signInWithEmailAndPassword(auth, email, password )
+  createUserWithEmailAndPassword(auth, email, password )
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+
+    set(ref(database ,'user/'+user.uid),{ //위에서 set, ref 를 추가한뒤에 데이터베이스 유저를 이어줌
+      username: username,  //유저이름은 유저이름 이메일은 이메일 패스워드는 패스워드 
+      email: email,
+      password: password
+
+    })
+    // ...
+    alert('생성완료');
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    
+    alert(errorMessage);
+  });
+ 
+});
+*/
+// 선나누기 
+  login.addEventListener('click',(e)=>{ //로그인 클릭시 
+    e.preventDefault(); //e. 기본으로 정의된 이벤트를 작동하지 못하게 하는 메서드입니다
+   
+    var email;
+    var password;
+    email= document.getElementById('email').value;
+    password= document.getElementById('password').value;
+  
+
+  signInWithEmailAndPassword(auth, email, password)
+  /*
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+
+    
+
+    Swal.fire({
+  title: "Good job!",
+  text: "You clicked the button!",
+  icon: "success"
+});
+        
+    const dt = new Date();
+    update(ref(database ,'user/'+user.uid),{ //위에서 set, ref 를 추가한뒤에 데이터베이스 유저를 이어줌
+     last_login : dt, //시간가져오기? 
+    }) //set 으로도 바꿔도됨 update 말고  
+    //왜 시간값이 안들어오지
+    
+ 
+    window.location.href="/online/online.html";
+
+  })*/
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {    
+      Swal.fire({
+        icon: "success",
+        title: "로그인 성공",
+        text: "잊지말고 기억하세요"
+      }).then(() => {
+        const dt = new Date();
+        const user = userCredential.user;
+        update(ref(database ,'user/'+user.uid),{
+          last_login : dt
+        }) 
+        window.location.href="/online/online.html";
+      });
+    })
+
+
+
+
+
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+
+
+    Swal.fire({
+      icon: "error",
+      title: "로그인실패",
+      text: "아이디 및 비밀번호입력을 실패하셨습니다.",
+      footer: '<a href="/signup/newuser.html">계정이없으신가요?</a>'
+        });
+
+
+  });
+
+  
+
+  });
+
+
+  // 선나누기 ! 
+
+
+const user= auth.currentUser;
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+  
+    const uid = user.uid;
+ 
+  } else {
+ 
+  }
+});
+
+</script>
+
+<script src="sweetalert2.all.min.js"></script>
+
+
+</html> 
+
+
+

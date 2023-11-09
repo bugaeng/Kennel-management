@@ -1,0 +1,21 @@
+{
+  "name": "rest-api-firebase",
+  "version": "1.0.0",
+  "description": "node.js rest api with firebase",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "MCEA",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase": "^10.5.2",
+    "firebase-admin": "^11.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

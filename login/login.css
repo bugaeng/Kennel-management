@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'DOSPilgiMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+@font-face {  /*두번째*/
+    font-family: 'intelone-mono-font-family-regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+html{
+/*background-color: darksalmon; 0번째*/
+/*background-image: url("https://cdn.dribbble.com/users/2123685/screenshots/4202315/media/9643e557aee83913397f1904b608a695.gif");  1번째 이미지 */
+background-image: url("https://cdn.dribbble.com/users/2123685/screenshots/4202315/media/9643e557aee83913397f1904b608a695.gif");
+background-size: cover;
+background-repeat: no-repeat;
+
+
+background-position: center center; /*한가운데다가 고정시키고 반응형해도 뭉개지지않기 */
+width: 100%;
+height: 100%;
+margin: 0 auto;
+animation-iteration-count: infinite;
+
+
+}
+
+
+
+
+.main {
+    width: 400px; /* 800 */
+    height: 600px;  /* 700 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    border-radius: 25px;
+    position: absolute;
+    top: 25%;  /* 50% */
+    left: 40%;  /* 30% */
+    margin: -25px 0 0 -25px;
+    top: 155px;
+    
+    background-color: white;
+
+    /*
+    font-family: 'DOSPilgiMedium';
+    background-repeat: no-repeat;
+    background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbwOJeA%2FbtszKGsjco2%2FIazbxca1JaiiNREl95aRyk%2Fimg.png");
+    background-size: 800px 700px ;
+    position: relative;
+    
+    background-position-x: -0px;
+  
+    */
+
+    box-shadow: 3px 3px 3px;
+   
+
+
+}
+
+.logo {
+    margin-top: 0px;
+    margin-bottom: 40px;
+    color: darkred;
+    font-family: 'intelone-mono-font-family-regular';
+    font-size: 35px;
+    font-weight: bolder;
+
+}
+
+#login {
+    width: 200;
+    
+    border-color: transparent;
+    color: darkred;
+    opacity:0.8;
+}
+
+.account {
+    display: block;
+    margin-bottom: 3px;
+    padding: 5px;
+    width: 200px;
+
+}
+
+#alert {
+    border-color: transparent;
+}
+
+.pointer{
+    cursor: pointer;
+    
+}
+
+
+select {
+   
+    width: 150px;
+    height: 35px;
+    background-size: 20px;
+    padding: 5px 30px 5px 10px;
+    border-radius: 4px;
+    outline: 0 none;
+    box-shadow: 3px 3px 3px;
+
+  }
+  select option {
+    background: black;
+    color: #fff;
+    padding: 3px 0;
+
+  }
+
+ 

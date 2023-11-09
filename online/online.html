@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>온습도 조절 시스템</title>
+
+    <style>
+        @font-face {
+    font-family: 'NPSfontBold';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+    }
+    html{
+      background-image: url("/images/5498894.jpg");
+      z-index: 1;
+      background-repeat : no-repeat;
+
+
+    }
+
+
+
+    body{
+        font-family: 'NPSfontBold';
+       
+    }
+      #jb-container {
+        width: 940px;
+        height: 1700px;
+        margin: 0px auto;
+        padding: 20px;
+        border: 1px solid #e4a95d;
+        background-color: #ffc360;
+        border-radius: 20px;
+      }
+      #jb-header {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #e4a95d;
+       background-color: rgb(33,127,93);
+       border-radius: 20px;
+       color: white;
+      }
+      #jb-content {
+        width: 900px;
+        padding: 30px 20px 20px 20px;
+        margin-bottom: 20px;
+        float: left;
+        border: 1px solid #e4a95d;
+        background-color: white;
+        border-radius: 20px;
+        height: 300px;
+      }
+      #jb-sidebar {
+        width: 900px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: left;
+        border: 1px solid #e4a95d;
+        height: 390px;
+        background-color: white;
+        border-radius: 20px;
+      }
+    /* #jb-footer {
+        clear: both;
+        padding: 20px;
+        width: 900px;
+        margin-bottom: 20px;
+        border: 1px solid white;
+        background-color: white;
+        border-radius: 20px;
+        height: 1200;
+      } */
+      
+      .jb-text {
+        padding: 15px 20px;
+        background-color: #444444;
+        border-radius: 5px;
+        color: #ffffff;
+        position: absolute;
+        opacity: 0;
+        transition: all ease 0.5s;
+      }
+      .jb-title:hover + .jb-text {
+        opacity: 1;
+      }
+
+      @keyframes moving {
+        from{ color:blue; }
+        to{ color:red; }
+
+      }
+
+    </style>
+    <link href="madeit.css" rel="stylesheet">
+    <link href="onoffbtn.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+    
+    <div id="jb-container">
+      <!-- <img src="/images/fly.png" id="fling" style="top:0; left: 0; position: absolute; z-index: 9999;"> -->
+      <div id="jb-header" style="height: 400px;">
+        <p style="z-index: 0; height: 200px;"> <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FPGmbu%2Fbtszb3cnBSi%2FxZOmK1kTjkRoqFE1Ib4X71%2Fimg.png" style="margin-top: -3%; margin-left: -2%; border-radius: 30px;"> </p> 
+        
+        
+        
+        <h1>파충류 사육환경 온습도 조절 시스템</h1>
+        <p> <a href="engonline.html" style="text-decoration: none; color: white;"><img src="https://i.namu.wiki/i/0InAQ-UCIDqxugvo3vKi4kW6qtouv6mOxd0JgZ-dS13PD5iu9PSFG1dx6pm3gKdYwf6bXO9hDmD53-2hpYZ_gA.svg" style="border-radius: 30px; float: left;"  width="30" height="12">change language </a> </p> 
+        <p style="text-align: right; float: right;"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F4Rfsk%2Fbtszkzn2HBu%2FMSSNW9Z5ZR7LgYhDTHMzIK%2Fimg.png" width="25" height="20"><a href="/domabam.html"  style="text-decoration: none; color: black;" type="submit" id="logout">로그아웃</a></p>
+      </div>
+      
+      <div id="jb-content" style="text-align: center;">
+        <h2>사용자 설정값</h2>
+        <p>사용자 사육장 환경을 지정해주세요</p>
+        
+        
+        <div></div>
+        <p>온도 : <input id="temp1"  type="text" style="width: 70px; height: 20px;" value="23">&nbsp;&nbsp;~&nbsp;&nbsp;<input id="temp2" type="text" style="width: 70px; height: 20px;" value="29"></p>
+        <p>습도 : <input id="humi1"  type="text"  style="width: 70px; height: 20px;" value="50">&nbsp;&nbsp;~&nbsp;&nbsp;<input id="humi2" type="text" style="width: 70px; height: 20px;" value="80"></p>
+        <p style="text-align: right; font-size: 12px; float: left; margin-top: 80px;">예) 온도 25 ~ 27, 습도 50 ~ 80 범위 값 벗어날시 <span style="color:red">경고</span>알림</p>
+      </div>
+
+        <div id="jb-content">
+        <P id="Display" style="margin: 0; text-align: center; font-size: 24px;"></P>
+        <p1  style="float: left; width: 33%; text-align: center;">
+        <p class="jb-title" style=" color: #37b810; font-size: 26px;">온도 </p>  
+        <div class="jb-text">대상의 온도값을 여기에 출력합니다</div>
+        <!--temp 이 밑에가 출력해서 나오는값-->
+               <a><img src="https://cdn-icons-png.flaticon.com/512/2512/2512583.png" width="40px" height="40px"> </a><a id="temp"></a>
+               <div id="warnning1" style="margin-top: 40px;"></div>
+        </p1>
+        <!-- 정리 선 -->
+        <p2  style="float: left; width: 33%; text-align: center;">
+        <p class="jb-title"style="color: #37b810;  font-size: 26px;"  >습도  </p> 
+        <div class="jb-text">대상의 습도값을 여기에 출력합니다</div>
+             <!--humi 이 밑에가 출력해서 나오는값-->
+               <a><img src="https://cdn-icons-png.flaticon.com/512/5418/5418587.png" width="40px" height="40px"></a> <a id="humi"></a>
+               <div id="warnning2" style="margin-top: 40px;"></div>
+        </p2>
+          <!-- 정리 선 -->
+        <p3  style="float: left; width: 33%; text-align: center;"> 
+        <p class="jb-title"style="color: #37b810;  font-size: 26px;" > 밝기</p>
+        <div class="jb-text" >현재 밝기 상태입니다.</div>
+        <a><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FxFaEk%2FbtszsAFN9km%2FMaL7fvKNBHoKvpZQvMGoi1%2Fimg.png" width="40px" height="40px"> </a>
+        <a id="light"> </a>
+        <div id="warnning3" style="margin-top: 40px;"></div>
+        </p3>
+        <br><br><br><br><br><br><br><br>
+        <br>
+        <h2 id="clock" style="color:black; font-size: 20px; text-align: center; margin-top: 90px;" class="jb-title">Sidebar</h2>
+        <div class="jb-text" style="float: right;">현재시간의 기점입니다</div>
+      </div> <!--content 닫기 div-->
+
+
+      <!-- 여기서부터 밑에 --> 
+      
+      <div id="jb-sidebar">
+        <div class="notice__container flex" style="float: left; width: 33%;">
+          <article class="notice__item flex" style="margin: auto; margin-top: 50px;" >
+            <div class="notice__thumb" id="fan"> <img class="active" src="https://png.pngtree.com/png-vector/20220621/ourmid/pngtree-fan-icon-air-vector-ventilator-png-image_5252478.png" width="50px">  </div>
+            <div class="notice__content"> 
+              <!-- 스위치 --> 
+              <label class="switch">
+                <input type="checkbox" class="checkbox fan1">
+                <span class="slider round"></span>
+              </label>
+              <!-- 스위치 내용 -->
+              <div class="notice__content__title">환풍기</div>
+              <div class="notice__content__address">상태 </div>
+              <div class="notice__content__pay fan-state1" style="color: green;">OFF</div>    
+            </div>
+          </div>
+          </article>
+          
+          <div class="notice__container flex" style="float: left; width: 33%;">
+          <article class="notice__item flex" style="margin: auto; margin-top: 50px;">
+            <div class="notice__thumb" id="fan" >  <div class="img-container1"> <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZJRiL%2Fbtszve3AQfr%2F7slJSGAi0cMf8RLY5Yaov0%2Fimg.png" style="width: 50px; height: 40px;  transform: translate(0%, 10%);"  ></div></div>
+            <div class="notice__content"> 
+              <!-- 스위치 --> 
+              <label class="switch">
+                <input type="checkbox" class="checkbox  fan2">
+                <span class="slider round"></span>
+              </label>
+              <!-- 스위치 -->
+              <div class="notice__content__title">가습기</div>
+              <div class="notice__content__address">상태 </div>
+              <div class="notice__content__pay fan-state2 " style="color: green;">OFF</div>
+            </div>
+           </div>
+          </article>
+         
+          <div class="notice__container flex" style="float: left; width: 33%;">
+          <article class="notice__item flex" style="margin: auto; margin-top: 50px;"> 
+            <div class="notice__thumb" id="fan" > <div class="img-container"> <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fwpjeg%2FbtszpzNTbR6%2FLlQjzutqT827nJFXTkAqmK%2Fimg.png" style="width: 40px; height: 40px;  transform: translate(15%, 10%);"  ></div> </div>
+          
+            <div class="notice__content"> 
+              <!-- 스위치 --> 
+              <label class="switch">
+                <input id="ledOn" type="checkbox" class="checkbox  fan3">
+                <span class="slider round"></span>
+              </label>
+              <!-- 스위치 -->
+        
+              <div class="notice__content__title">조명</div>
+              <div class="notice__content__address">상태 </div>
+              <div class="notice__content__pay fan-state3" style="color: green;">OFF</div>
+            </div>
+          </div>
+          <div style="position: relative; margin-top: 200px;">
+            <div style="position: absolute; top:5px; left:5px;"> 
+              <img style="filter: drop-shadow(10px 6px 6px #535353); margin-top: 20px; z-index: 1;" src="/images/8038991.png"></img>
+            </div>
+            <div style="position: absolute; top: 95px; left: 270px;">
+              <div id="container" style="position: relative;">
+                <div id="whiteBall" style="position: absolute; top: 0px; left: 0px; width: 30px; height: 30px; background-color: white; border-radius: 50%;"></div>
+                <div id="blackBall" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; background-color: black; border-radius: 50%;"></div>
+              </div>
+            </div>
+
+            <div style="position: absolute; top: 125px; left: 250px;">
+              <div id="container" style="position: relative;">
+                <div id="whiteBall2" style="position: absolute; top: 0px; left: 0px; width: 30px; height: 30px; background-color: white; border-radius: 50%;"></div>
+                <div id="blackBall2" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; background-color: black; border-radius: 50%;"></div>
+              </div>
+            </div>
+          </div>
+          </article>
+          <input id="test" type="submit" value="테스트제출" style="margin-top: 900px;">
+        </div>   <!-- 컨테이너 -->
+    </div>   <!-- 사이드바  -->
+
+      <script type="module" src="/firebase.js"></script>
+      <script type="module" src="/signup/signup.js"></script>
+      <script src="pagesystem.js"></script>
+      <script type="module" src="logout.js"></script>
+  </body>
+</html>

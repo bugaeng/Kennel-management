@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lizard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="domabammadeit.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+html{
+    font-size: 25px;
+}
+
+.body { 
+  width:100%;
+  position: relative;
+  width: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  margin: 0;
+    padding: 0;
+ }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cafe24Supermagic-Bold-v1.0';
+  letter-spacing: 5px;
+}
+
+.main_image {
+    position: relative;
+  }
+  .main_image_text {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    color: white;
+  }
+ 
+.html{
+  margin: 0;
+    padding: 0;
+    top: 0%;
+    
+}
+
+body{
+  background-color: rgb(255, 255, 255);
+}
+
+.btn1{
+position:fixed;
+right:30px;
+bottom:30%;
+z-index:10;
+
+
+box-sizing: border-box;
+border-radius: 0%;
+border: 3px solid rgb(199, 199, 199);
+
+
+  background-color: white;
+  width: 150px;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-size : 100%;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+
+.btn1:hover{
+  opacity: 1;
+  background-color: white;
+}
+
+b:hover{
+  color: blue;
+}
+
+/*opacity: 0.7; 불투명하게*/
+
+</style>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="domabammadeit.css">
+</head>
+<!-- Side remote control -->
+
+<div class="btn1" style="text-align: center; font-size: 17px; text-decoration: none;">
+   <a class="sub" href="#about" style=" text-decoration-line: none; color:gray;"><b>Introduction</b></a></a>
+   <hr>
+   <a class="sub" href="#menu" style=" text-decoration-line: none; color:gray;"><b>System</b></a>
+   <hr>
+   <a class="sub" href="#hu" style=" text-decoration-line: none; color:gray;"><b>Review</b></a>
+   <hr>
+   <a class="sub" href="#site" style=" text-decoration-line: none; color:gray;"><b>Site</b></a>
+   <hr>
+   <a class="sub" href="#gae" style=" text-decoration-line: none; color:gray;"><b>Precautions</b></a>
+</div>
+
+<body onresize="parent.resizeTo(500,400)" onload="parent.resizeTo(500,400)">
+
+<!-- Navbar (sit on top) -->
+<nav class="navbar navbar-expand-sm bg-light navbar-light" style="letter-spacing:4px; width: 100%; height: 50px; font-size: 13px; box-shadow: 0 0 3px;">
+  <div class="container-fluid ">
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link" href="/login/login.html"><b>Login</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup/newuser.html"><b>Sign Up</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">한글로 변경</a>
+      </li>
+      <li class="nav-item">
+        </a><a class="nav-link" href="./DomaBam.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/255px-Flag_of_South_Korea.svg.png" style="border-radius: 30px;"  width="30" height="12" style="float: right;"> </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="" style=" letter-spacing:4px; width: 100%; height: 30%; font-size: 13px; box-shadow: 1px 1px 3px;" id="home">
+  <div class="main_image">
+      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://cdn.pixabay.com/photo/2022/09/27/19/45/ai-generated-7483579_960_720.jpg" alt="Jungle 1" class="d-block" style="width:100%" height="700px">
+            <div class="carousel-caption">
+              <h3> Lightweight and easy to use. </h3>
+              <p> You can use it without difficulty.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2022/10/12/11/25/ai-generated-7516300_1280.jpg" alt="Jungle photo 2" class="d-block" style="width:100%" height="700px">
+            <div class="carousel-caption">
+              <h3>Real-time monitoring is available.</h3>
+              <p>You can remotely control it anytime, anywhere.</p>
+            </div> 
+          </div>
+          <div class="carousel-item">
+            <img src="https://preview.redd.it/1920-1280-jungle-with-a-little-stream-generated-by-ai-v0-h7c5rd58agm91.png?auto=webp&s=9802a29c9c13ba49ab2e431a4199617201a16c98" alt="Jungle photo 3" class="d-block" style="width:100%" height="700px" >
+            <div class="carousel-caption">
+              <h3> Supports English </h3>
+              <p>Although a translator is used.</p>
+            </div>  
+          </div>
+        </div>
+        <h1 class="main_image_text" style="font-size:64px" > Environmental Management System
+        </h1>
+      </div>
+  </div>
+</header>
+<br>
+<br>
+<!-- Page content -->
+<div class=""> 
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FXXoyN%2FbtszCifBoUT%2FLZ3NZkzMvLmrolPKu1WuKK%2Fimg.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="50%" height="500" style="float: left;" >
+   </div>
+
+   <div class=""  style="text-align: center;" >
+     <h1 class="" >Site Purpose </h1><br>
+     <h5 class=""></h5>
+     <p class="greytextcolor"> Checking the temperature, moisture, and other environmental conditions by yourself is a hassle and a tedious task.</p>
+     <p class="greytextcolor">We provide a service to check the temperature, moisture, and lighting data using sensors and data processing methods to support reptile breeding.</p>
+     <p class=""> You can remotely adjust the environment while doing other tasks on your computer.</p>
+   </div>
+<br><br><br><br><br><br><br>
+
+  <hr >
+
+  <div class="container mt-5"> <!-- responsive web page start -->
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="containerused" >
+          <div id="about" class="" style="text-align: center; font-size: 24px;">
+              <br>
+              <h1 class="" > Introduction </h1>
+              <br>
+              <br>
+              <div class="textarea">
+              <p class="greytextcolor">  <span style="color: green; font-size: 32px;">Lizard</span> and other reptiles and special animals are sensitive to environmental conditions such as temperature and humidity.</p>
+              <p class="greytextcolor"> Depending on the individual and species, reptiles need a swamp-like or desert-like environment to survive without stress.</p>
+              <p class="greytextcolor">To support this, our website provides control capability using a control panel that can adjust temperature and humidity through the use of a fan and LED lighting. </p>
+              <br>
+              </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="" id="menu" style="text-align: center; font-size: 24px;">
+            <div class="">
+              <br>
+              <h1 class=""> Supported Systems</h1>
+              <br>
+              <br>
+              <h3> Temperature</h3> 
+              <p class="greytextcolor"> The temperature value data is read from the temperature sensor installed in the breeding facility.</p>
+              <P class="greytextcolor"> You can output the data on the web to check the temperature of the breeding facility.</P>
+              <P class="greytextcolor"> You don't need to look at the thermometer one by one on site.</p>
+              <br>
+              <br>
+              <h3> Moisture</h3>
+              <p class="greytextcolor"> You can adjust humidity to the optimal level.</p>
+              <P class="greytextcolor"> Setting the optimal condition for humidity, around 50-80% depending on the individual, and species and check if the humidity values are within the designated range.</P>
+              <br>
+              <br>
+              <h3> LED</h3>
+              <p class="greytextcolor"> You can adjust LED brightness according to the temperature in the breeding facility.</p>
+              <P class="greytextcolor"> The automatic control function is available, and as the temperature increases, the brightness automatically decreases.</P>
+              <br>
+              <br>
+              <h3> Development Direction </h3> 
+              <p class="greytextcolor"> The goal is to automate the operation of fan and humidifier by reading temperature, humidity and LED values.</p>
+              <br>
+            </div>
+          <hr >
+        </div>
+        <div class="col-sm-4">
+          <div class=""  id="hu" style="text-align: center; font-size: 24px;">
+            <br>
+            <h1 class=""> User Review</h1><br> 
+
+            <h4> Albino Burmese Python</h4> 
+            <p class="greytextcolor">The light range is too small. ★★★★☆ </p>
+            <br>
+          
+            <h4> Tree frog </h4>
+            <p class="greytextcolor">I was able to check the temperature and humidity of my house. ★★★★★</p><br>
+          
+            <h4> Junglelian hamster </h4>
+            <p class="greytextcolor"> Thank you very much. ★★★★★ </p><br>
+
+            <h4> Leopard gecko </h4> 
+            <p class="greytextcolor"> It's good. </p> 
+            <br> 
+          </div>
+          <hr width="100%">
+        </div>
+        <div class="col-sm-4">
+          <div class=""  id="site" style="text-align: center; font-size: 24px;">
+            <br>
+            <h1 class=""> Site for Obtaining Feed </h1><br> 
+          
+            <h4> </h4> 
+            <p class="greytextcolor" >   <a href="https://xn--9m1b023b.com/category/%EC%83%9D%EB%A8%B9%EC%9D%B4/86/"> The Zoo</a></p>
+            <br>
+          
+            <h4> </h4>
+            <p class="greytextcolor" >   <a href="http://www.insectharmony.net/shop/shopbrand.html?type=X&xcode=002&mcode=003&sort=&page=1"> Insect Harmony</a></p>
+            <br>
+          
+            <h4> </h4>
+            <p class="greytextcolor" >   <a href="http://milimpet.co.kr/main/index.php"> Milimpet</a></p>
+          
+            <h4> </h4> 
+            <p class="greytextcolor"> </p> 
+            <br>
+          </div>
+          <hr>
+        </div>
+        <div class="col-sm-4">
+          <div class="" id="gae" style="text-align: center; font-size: 24px;" >
+            <br>
+            <h1 class=""> Precautions When Using </h1>
+            <br>
+            <p class="greytextcolor"> We are not responsible for malfunctions and damages caused by user carelessness.</p>
+            <p class="greytextcolor"> Please be careful not to let fans touch children's hands. </p>
+            <p class="greytextcolor"> As bacteria can breed, please change and sterilize the water once a day in the humidifier.</p>
+            <p class="greytextcolor"> As electrical components are installed, do not spray water or immerse in water to avoid electric shock.</p>
+            <br>
+          </div>
+          <div style="margin-top: 40px;"></div>
+        </div>
+      </div>
+    </div>
+<!-- End page content -->
+
+<!-- Footer -->
+</div>
+</div>
+</div> <!-- responsive web page end-->
+<hr>
+<footer class="" >
+  <p style="float: right; transform: scaleX(-1);"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F5QB4m%2FbtszzVErgey%2FljQRt4BdsRsAII8G6zXaO0%2Fimg.png"></p>
+</footer>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<p> Emergency  <a href="/online/engonline.html" title="" target="_blank" class="">  link</a></p>
+<!-- End page content -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
